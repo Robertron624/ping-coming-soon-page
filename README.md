@@ -31,12 +31,13 @@ Users should be able to:
 	- The email address is not formatted correctly (i.e. a correct email address should have this structure: `name@host.tld`). The message for this error should say *"Please provide a valid email address"*
 
 ### Screenshot
+![image](https://user-images.githubusercontent.com/72587880/230740277-ff81e44e-9962-493f-8061-676e8dc67280.png)
 
 
 ### Links
 
 - Solution URL: [Solution URL](https://github.com/Robertron624/ping-coming-soon-page)
-- Live Site URL: [Live site URL](https://your-live-site-url.com)
+- Live Site URL: [Live site URL](https://celadon-speculoos-76dd38.netlify.app)
 
 ## My process
 
