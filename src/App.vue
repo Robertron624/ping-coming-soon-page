@@ -8,16 +8,25 @@ export default {
     }
   },
   methods: {
-    validateEmail(email: string) {
-      const re = /\S+@\S+\.\S+/;
+    validateEmail(email: string):boolean {
+      const re:RegExp = /\S+@\S+\.\S+/;
       return re.test(email);
     },
     submitForm() {
+
+
+      if( this.email === '') {
+        this.emailError = 'Whoops! It looks like you forgot to add your email';
+        return;
+      } 
+
       if (this.validateEmail(this.email)) {
         this.emailError = '';
-      } else {
+      } 
+      else {
         this.email = 'example@email/com';
         this.emailError = 'Please provide a valid email address';
+        return;
       }
       console.log("submitting form")
     },
