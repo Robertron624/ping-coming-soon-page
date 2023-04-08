@@ -16,6 +16,7 @@ export default {
       if (this.validateEmail(this.email)) {
         this.emailError = '';
       } else {
+        this.email = 'example@email/com';
         this.emailError = 'Please provide a valid email address';
       }
       console.log("submitting form")
@@ -60,6 +61,13 @@ export default {
 </template>
 
 <style scoped lang="scss">
+
+@mixin desktop {
+  @media (min-width: 768px) {
+    @content;
+  }
+} 
+
 // Colors
 
 // Primary
@@ -110,6 +118,12 @@ main {
   margin-bottom: 3rem;
 
   form {
+
+
+    @include desktop {
+      flex-direction: row;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,6 +136,16 @@ main {
       height: 2.6rem;
       border-radius: 20px;
       border: none;
+      cursor: pointer;
+      transition: opacity .3s ease;
+
+      @include desktop {
+        width: 40%;
+      }
+
+      &:hover {
+        opacity: .6;
+      }
     }
     .input-container {
       width: 100%;
@@ -129,15 +153,19 @@ main {
         width: 90%;
         height: 2.6rem;
         border-radius: 20px;
-      }
+
+        @include desktop {
+          width: 100%;
+        }
     }
+  }
 
     input {
-      padding-left: 1rem;
+      padding-left: 2rem;
 
       &::placeholder {
         color: $gray;
-        padding-left: 1rem;
+        // padding-left: 1rem;
       }
     }
 
@@ -172,6 +200,10 @@ main {
     color: $gray;
     line-height: 40px;
 
+    @include desktop {
+      font-size: 3rem;
+    }
+
     strong {
       color: $very-dark-blue;
       font-weight: 700;
@@ -201,6 +233,14 @@ footer {
       gap: 2rem;
   
       li {
+
+        &:hover {
+          background-color: $blue;
+          
+          i {
+            color: white;
+          }
+        }
   
         border: 1px solid $pale-blue;
         width: 2rem;
@@ -209,6 +249,15 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: background-color .3s ease;
+
+        a {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
   
         i {
           color: $blue;
